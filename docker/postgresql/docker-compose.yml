@@ -1,0 +1,9 @@
+version: "3.8"
+services:
+  PostgreSQL:
+    container_name: CloudNativePostgreSQL
+    image: postgres:16.3-alpine3.20 # use latest official postgres version
+    env_file:
+      - database.env
+    ports:
+      - 5432:5432
