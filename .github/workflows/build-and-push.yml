@@ -27,12 +27,12 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: myapp:latest
+          tags: '${{ secrets.AZURE_URL }}/spring-boot/myapp:latest'
           file: Dockerfile.azure
 
       - name: Build and Push Native to ACR
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: myapp-ntv:latest
+          tags: '${{ secrets.AZURE_URL }}/spring-boot/myapp-ntv:latest'
           file: Dockerfile.native.azure
